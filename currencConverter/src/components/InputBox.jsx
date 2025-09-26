@@ -18,10 +18,10 @@ function InputBox({
 {
 
 
-    // useEffect(() => {
-    //     console.log(currencyOption)
-    // }, [currencyOption]);
-    //
+    useEffect(() => {
+        console.log(currencyOption)
+    }, [currencyOption]);
+
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex  ${className}`}>
             <div className="w-1/2">
@@ -46,8 +46,8 @@ function InputBox({
 
                 >
                     {
-                        Object.keys(currencyOption).map((value)=>(
-                            <option value={currencyOption[value]}>{value}</option>
+                        currencyOption.map((value)=>(
+                            <option key={value} value={value}>{value}</option>
                         ))
 
 

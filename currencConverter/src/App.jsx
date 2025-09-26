@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -22,7 +22,10 @@ function App() {
     const convert = () => {
         setCurrencyamt(amount * currencyinfo[to])
     }
-
+    // useEffect(() => {
+    //     console.log(options);
+    //
+    // }, [options]);
 
     return (
         <div
@@ -45,7 +48,7 @@ function App() {
                             <InputBox
                                 label="From"
                                 amount={amount}
-                            currencyOptions={options}
+                            currencyOption={options}
                                 onCurrencychange={(currency)=>setAmount(amount)}
                                 selectCurrency={from}
                                 onAmountchange={(amount)=>(setAmount(amount))}
@@ -66,7 +69,7 @@ function App() {
                                 label="To"
 
                                 amount={currencyAmt}
-                                currencyOptions={options}
+                                currencyOption={options}
                                 onCurrencychange={(currency)=>setTo(currency)}
                                 selectCurrency={from}
 
